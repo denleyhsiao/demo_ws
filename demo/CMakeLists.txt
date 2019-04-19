@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(demo)
+set(PROJECT_NAME demo)
+project(${PROJECT_NAME})
 
-add_executable(demo main.cpp)
+add_executable(${PROJECT_NAME} main.cpp)
 

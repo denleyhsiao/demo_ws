@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(boost_cs_demo)
+set(PROJECT_NAME boost_cs_demo)
+project(${PROJECT_NAME})
 
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
  
