@@ -4,9 +4,16 @@ set(PROJECT_NAME boost_demo)
 project(${PROJECT_NAME})
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
+find_package(Boost REQUIRED thread)
+include_directories(${Boost_INCLUDE_DIR})
+add_executable(${PROJECT_NAME}
+  src/first.cpp
+)
+target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES})
+
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIR})
-add_executable(${PROJECT_NAME} 
-  test/test_format.cpp 
+add_executable(${PROJECT_NAME}_test
+  test/test_format.cpp
   test/main.cpp)
-target_link_libraries(${PROJECT_NAME} ${GTEST_BOTH_LIBRARIES})
+target_link_libraries(${PROJECT_NAME}_test ${GTEST_BOTH_LIBRARIES})
