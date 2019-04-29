@@ -14,13 +14,13 @@ public:
   virtual ~DeadlineTimer();
   void init();
   void wakeUp();
-  
+
 protected:
   void doPrint(const char* prefix);
   timer_type timer;
   boost::posix_time::time_duration sleepDuration;
   boost::posix_time::ptime end;
-  
+
 private:
   virtual bool isPaused(const boost::system::error_code &err) const = 0;
   virtual void pause() = 0;
@@ -28,7 +28,7 @@ private:
   void callback(const boost::system::error_code &err);
   void async_wait();
   bool stopped;
-  boost::asio::io_service& io;  
+  boost::asio::io_service& io;
   boost::posix_time::ptime begin;
   finish_func_type callbackFinish;
 };

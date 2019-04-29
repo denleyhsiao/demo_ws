@@ -22,6 +22,6 @@ using namespace std;
 
 typedef ip::tcp::acceptor acceptor;
 typedef ip::tcp::endpoint endpoint;
-typedef std::shared_ptr<ip::tcp::socket> socket_ptr; 
+typedef std::shared_ptr<ip::tcp::socket> socket_ptr;
 
 #endif

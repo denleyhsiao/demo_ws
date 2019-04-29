@@ -8,7 +8,7 @@ class Server
 public:
     Server();
     void run();
-    
+
 private:
     void accept();
     void accept_handler(const boost::system::error_code& ec, socket_ptr sock);

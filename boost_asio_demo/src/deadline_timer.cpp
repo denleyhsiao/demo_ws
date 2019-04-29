@@ -2,7 +2,7 @@
 #include <boost/thread/thread_time.hpp>
 #include <boost/bind.hpp>
 
-DeadlineTimer::DeadlineTimer(boost::asio::io_service& io, float sleepSeconds, finish_func_type callbackFinish) 
+DeadlineTimer::DeadlineTimer(boost::asio::io_service& io, float sleepSeconds, finish_func_type callbackFinish)
   : io(io), sleepDuration(boost::posix_time::milliseconds(static_cast<unsigned int>(sleepSeconds * 1000))), callbackFinish(callbackFinish), timer(NULL), stopped(false)
 {
 }
@@ -40,7 +40,7 @@ void DeadlineTimer::wakeUp()
 
 void DeadlineTimer::async_wait()
 {
-  timer->async_wait(boost::bind(&DeadlineTimer::callback, this, boost::asio::placeholders::error));  
+  timer->async_wait(boost::bind(&DeadlineTimer::callback, this, boost::asio::placeholders::error));
 }
 
 void DeadlineTimer::callback(const boost::system::error_code &err)

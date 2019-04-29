@@ -12,13 +12,13 @@ void wakeCallback()
   std::cout<<"Wake is finished"<<std::endl;
 }
 
-int main()  
-{    
+int main()
+{
   boost::asio::io_service io;
   DelayDeadlineTimer master(io, 5.0, masterCallback);
   WakeDeadlineTimer wake(io, 2.0, 5, &master, wakeCallback);
   master.init();
   wake.init();
   io.run();
-  return 0;    
+  return 0;
 }
