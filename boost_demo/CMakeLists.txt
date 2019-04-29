@@ -7,7 +7,7 @@ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 find_package(Boost REQUIRED thread)
 include_directories(${Boost_INCLUDE_DIR})
 add_executable(${PROJECT_NAME}
-  src/sixth.cpp
+  src/seventh.cpp
 )
 target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES})
 
