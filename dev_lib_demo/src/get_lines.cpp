@@ -1,4 +1,6 @@
 #include "dev_lib/dev_helper.h"
+#include "dev_lib/boost_helper.h"
+#include "dev_lib/os_helper.h"
 #include <boost/iostreams/device/file.hpp>
 #include <boost/iostreams/stream.hpp>
 #include <boost/filesystem.hpp>
@@ -16,7 +18,7 @@ void print(const DevHelper::floats_type& values, bool showValues = false)
 
 int main(int argc, const char* argv[])
 {
-  std::string moduleFileName = DevHelper::getModuleFileName();
+  std::string moduleFileName = OSHelper::getModuleFileName();
   std::string fileName = (boost::filesystem::path(moduleFileName.c_str()).parent_path()/"../../dev_lib_demo/data/mock_laser_data.txt").string();
   boost::iostreams::stream<boost::iostreams::file_source> file(fileName.c_str());
   while(true)
@@ -24,7 +26,7 @@ int main(int argc, const char* argv[])
     std::string line = DevHelper::getLine(file);
     if (line.empty())
       break;
-    print(DevHelper::split(line.c_str()));
+    print(BoostHelper::split(line.c_str()));
   }
 
   return 0;

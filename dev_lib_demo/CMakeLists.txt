@@ -12,5 +12,7 @@ include_directories(
 add_executable(${PROJECT_NAME}
   src/get_lines.cpp
   ../vendor/dev_lib/src/dev_helper.cpp
+  ../vendor/dev_lib/src/boost_helper.cpp
+  ../vendor/dev_lib/src/linux_os_helper.cpp
 )
 target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES})
