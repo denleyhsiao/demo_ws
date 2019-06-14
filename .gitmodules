@@ -1,3 +1,9 @@
 [submodule "vendor/dev_lib"]
 	path = vendor/dev_lib
 	url = https://github.com/denleyhsiao/dev_lib.git
+[submodule "vendor/websocketpp"]
+	path = vendor/websocketpp
+	url = https://github.com/denleyhsiao/websocketpp.git
+[submodule "vendor/SimpleFileWatcher"]
+	path = vendor/SimpleFileWatcher
+	url = https://github.com/denleyhsiao/SimpleFileWatcher.git
